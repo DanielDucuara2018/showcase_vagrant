@@ -1,0 +1,18 @@
+#docker run -d -p 8000:8000 -p 9000:9000 --name=portainer 
+#--restart=always 
+#-v /var/run/docker.sock:/var/run/docker.sock 
+#-v portainer_data:/data 
+#portainer/portainer-ce
+
+version: "3"  
+services:
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+    env_file: .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - /home/vagrant/docker-data/portainer/data:/data 

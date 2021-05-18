@@ -1,0 +1,29 @@
+version: "3"  
+services:
+  nexus:
+    #image: sonatype/nexus3:3.24.0
+    image: sonatype/nexus3:3.30.0
+    container_name: nexus
+    privileged: true
+    user: root
+    #entrypoint: "/bin/sh"
+    #command: -c "chown -R nexus /nexus-data ; ${SONATYPE_DIR}/start-nexus-repository-manager.sh"
+    ports:
+      - "8081:8081"
+    env_file: .env
+    volumes:
+      - /home/vagrant/docker-data/nexus/data:/nexus-data
+  # nexus_debug:
+  #   #image: sonatype/nexus3:3.24.0
+  #   image: sonatype/nexus3:3.30.0
+  #   container_name: nexus
+  #   entrypoint: "/bin/sh"
+  #   #command: -c "chown -R nexus /nexus-data ; ${SONATYPE_DIR}/start-nexus-repository-manager.sh"
+  #   command: -s
+  #   stdin_open : true
+  #   tty: true
+  #   ports:
+  #     - "8081:8081"
+  #   env_file: .env
+  #   volumes:
+  #     - /home/vagrant/docker-data/nexus/data:/nexus-data
