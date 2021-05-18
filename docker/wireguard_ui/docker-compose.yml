@@ -1,0 +1,18 @@
+######### Translate
+# docker run --rm -it --privileged --entrypoint "/wireguard-ui" -v /tmp/wireguard-ui:/data -p 8080:8080 -p 5555:5555 embarkstudios/wireguard-ui:latest --data-dir=/data --log-level=debug
+
+version: "3"
+services:
+    wireguard:
+        image: embarkstudios/wireguard-ui:latest
+        container_name: wireguard_ui
+        privileged: true
+        entrypoint: /wireguard-ui
+        environment: 
+            - WIREGUARD_UI_DATA_DIR=/home/vagrant/docker-data/wireguard_ui/data
+            - WIREGUARD_UI_LOG_LEVEL=debug
+        volumes:
+            - /home/vagrant/docker-data/wireguard_ui/data:/data
+        ports:
+            - 8082:8080
+            - 5555:5555
