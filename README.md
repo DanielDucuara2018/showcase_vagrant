@@ -7,13 +7,13 @@
 - Install vagrant
 - Install virtual box
 - Download vm box (recommended: ubunntu/bionic64)
-- Install docker compose plugin "vagrant plugin install vagrant-docker-compose"
+- Install docker-compose plugin (command: vagrant plugin install vagrant-docker-compose)
 
-### Aditional Notes 
+### Aditional Notes about vagrant showcase
 
-- Virtual machine box : ubuntu/bionic64 -> ubuntu 18.04 
-- Modify memory value in Vagrantfile depending on host machine ressources 
-- Modify ip address for the private network in Vagrantfile if it's neccesary 
+- Virtual machine box : ubuntu/bionic64 -> ubuntu 18.04. 
+- Modify memory value in Vagrantfile depending on host machine ressources. 
+- Modify ip address for the private network in Vagrantfile if it's neccesary. 
 
 ## Docker containers
 
@@ -22,3 +22,4 @@
 - nexus
 - portainer
 - wireguard server 
+- wireguard ui (not working)
