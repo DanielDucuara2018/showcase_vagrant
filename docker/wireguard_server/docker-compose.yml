@@ -6,12 +6,12 @@ services:
         cap_add:
             - NET_ADMIN
             - SYS_MODULE
-        env_file: .env    
-        # environment: 
-        #     - PUID=1000
-        #     - PGID=1000
-        #     - TZ=Europe/London
-        #     - PEERS=1
+        # env_file: .env    
+        environment: 
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Paris
+            - PEERS=2
         volumes:
             - /home/vagrant/docker-data/wireguard/config:/config
             - /home/vagrant/docker-data/wireguard/lib/modules:/lib/modules
